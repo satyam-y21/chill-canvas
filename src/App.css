@@ -2,7 +2,7 @@
   --cyan : #00ffff;
   --thistle : #D8BFD8;
   --silver : #c0c0c0;
-  --blue-gray : #96C2DB40;
+  --blue-gray : #96C2DB70;
   --montserrat: "Montserrat", sans-serif;
   --roboto: "roboto", sans-serif;
 }
@@ -47,7 +47,7 @@
   justify-content: space-between;
   font-size: calc(10px + 2vmin);
   position: fixed;
-  z-index: 2;
+  z-index: 10;
 }
 
 .header-name {
@@ -66,11 +66,27 @@
   text-shadow: -1px 0 var(--silver), 0 1px var(--silver), 1px 0 var(--cyan), 0 -1px var(--cyan);
 }
 
+.sound-btn {
+  margin: 5px;
+  color: var(--cyan);
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-shadow: -1px 0 var(--silver), 0 1px var(--silver), 1px 0 var(--silver), 0 -1px var(--silver);
+}
+
+.sound-btn:hover {
+  color: #fff;
+}
+
 .button {
   margin: 5px;
   text-decoration: none;
   font-size: 1.2rem;
   text-shadow: -1px 0 var(--blue-gray), 0 1px var(--blue-gray), 1px 0 var(--blue-gray), 0 -1px var(--blue-gray);
+}
+
+.header-buttons a{
+  color: #fff;
 }
 
 .header-buttons a:hover{
@@ -94,23 +110,29 @@
 .image-container {
   min-width: 100%;
   min-height: 100vh;
-  background-image: url(/src/assets/winter.jpg);
+  background-position: center 0;
+  /* background-image: url(/src/assets/winterBlueBlack.jpg); */
+  /* background-image: url(/src/assets/winter1.jpg); */
+  /* background-image: url(/src/assets/winter4.jpg); */
+  background-image: url(/src/assets/winter5.jpg);
+  /* background-image: url(/src/assets/winter6.jpg); X */
+  /* background-image: url(/src/assets/winter.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    background: linear-gradient(to bottom, transparent, #96C2DB);
+  }
 }
 
-.image-container::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100px;
-  background: linear-gradient(to bottom, transparent, #96C2DB);
-}
 
 .image-container-text {
   display: flex;
@@ -125,9 +147,11 @@
 .image-container-text h1 {
   font-family: var(--montserrat);
   font-weight: 800;
-  font-size: 4rem;
+  /* font-size: 4rem; */
+  font-size: 3.6rem;
   color: var(--cyan);
   text-shadow: -1px 0 var(--silver), 0 1px var(--silver), 1px 0 var(--thistle), 0 -1px var(--thistle);
+  z-index: 1;
 }
 
 .image-container-text h1:hover {
@@ -138,6 +162,7 @@
   font-family: var(--roboto);
   font-size: 1.25rem;
   text-shadow: -1px 0 var(--silver), 0 1px var(--blue-gray), 1px 0 var(--blue-gray), 0 -1px var(--silver);
+  z-index: 1;
 }
 
 .places {
@@ -161,8 +186,8 @@ footer {
   align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: black;
-  color: #fff;
+  background-color: var(--cyan);
+  color: #000;
 }
 /* --------------------------------------------------------Footer css-------------------------------------------------------- */
 
@@ -171,6 +196,9 @@ footer {
   position: absolute;
   border-radius: 50%;
   background: white;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), /* Outer glow */
+              0 0 20px rgba(0, 255, 255, 0.6), /* Larger outer glow */
+              inset 0 0 5px rgba(255, 255, 255, 0.5);
   /* background: var(--cyan); */
 }
 
@@ -339,6 +367,195 @@ footer {
   animation: snowball-animation 12s linear infinite;
 }
 
+/* container 2 */
+.snow-ball-container-2 .snow-ball-2 {
+  position: absolute;
+  border-radius: 50%;
+  /* background: cyan; */
+  background: white;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.8), /* Outer glow */
+              0 0 10px rgba(0, 255, 255, 0.6), /* Larger outer glow */
+              inset 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(even) {
+  width: 16px;
+  height: 16px;
+  animation: flake-motion 12s linear infinite;
+}
+
+/* Position the Snowballs above the screen */
+.snow-ball-container-2 .snow-ball-2:nth-child(1) {
+  top: -30%;
+  right: 5%;
+  width: 20px;
+  height: 20px;
+  animation: snowball-animation 10s linear 2s infinite;
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(2) {
+  top: -20%;
+  left: 10%;
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(3) {
+  top: -50%;
+  left: 15%;
+  animation: snowball-animation 10s linear infinite;
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(4) {
+  top: -10%;
+  left: 20%;
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(5) {
+  top: -20%;
+  left: 25%;
+  width: 20px;
+  height: 20px;
+  animation: snowball-animation 10s linear 2s infinite;
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(6) {
+  top: -40%;
+  left: 30%;
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(7) {
+  top: -30%;
+  left: 35%;
+  width: 5px;
+  height: 5px;
+  animation: snowball-animation 10s linear infinite;
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(8) {
+  top: -20%;
+  left: 40%;
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(9) {
+  top: -50%;
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  animation: snowball-animation 10s linear 2s infinite;
+}
+
+.snow-ball-container-2 .snow-ball-2:nth-child(10) {
+  top: -5%;
+  left: 50%;
+}
+
+/* container 3 */
+/* .snow-ball-container-3 .snow-ball-3 {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(even) {
+  width: 16px;
+  height: 16px;
+  animation: flake-motion 15s linear infinite;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(1) {
+  top: -50%;
+  left: 5%;
+  width: 20px;
+  height: 20px;
+  animation: snowball-animation 10s linear 2s infinite;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(2) {
+  top: -20%;
+  left: 10%;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(3) {
+  top: -50%;
+  left: 15%;
+  animation: snowball-animation 12s linear infinite;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(4) {
+  top: -10%;
+  left: 20%;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(5) {
+  top: -20%;
+  left: 25%;
+  width: 20px;
+  height: 20px;
+  animation: snowball-animation 12s linear 2s infinite;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(6) {
+  top: -40%;
+  left: 30%;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(7) {
+  top: -30%;
+  left: 35%;
+  width: 5px;
+  height: 5px;
+  animation: snowball-animation 12s linear infinite;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(8) {
+  top: -20%;
+  left: 40%;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(9) {
+  top: -50%;
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  animation: snowball-animation 12s linear 2s infinite;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(10) {
+  top: -5%;
+  left: 50%;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(11) {
+  top: -20%;
+  left: 60%;
+  animation: snowball-animation 12s linear infinite;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(12) {
+  top: -10%;
+  left: 70%;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(13) {
+  top: -50%;
+  left: 80%;
+  width: 5px;
+  height: 5px;
+  animation: snowball-animation 12s linear 2s infinite;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(14) {
+  top: -20%;
+  left: 90%;
+}
+
+.snow-ball-container-3 .snow-ball-3:nth-child(15) {
+  top: -50%;
+  left: 95%;
+  width: 30px;
+  height: 30px;
+  animation: snowball-animation 12s linear infinite;
+} */
+
 @keyframes snowball-animation {
   0% {
     transform: translate(0);
@@ -397,6 +614,30 @@ footer {
   }
 }
 /* --------------------------------------------------------snowfall anim css-------------------------------------------------------- */
+
+/* --------------------------------------------------------User Concent css-------------------------------------------------------- */
+.concent-view {
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100vh;
+  background: var(--cyan);
+}
+
+.consent-button {
+  margin: 5px;
+  padding: 5px;
+  width: 20%;
+  border-radius: 20px;
+  background-color: #fff;
+  &:{
+
+  }
+}
+/* --------------------------------------------------------User Concent css-------------------------------------------------------- */
 
 /* --------------------------------------------------------Custom Scrollbar-------------------------------------------------------- */
 ::-webkit-scrollbar {
